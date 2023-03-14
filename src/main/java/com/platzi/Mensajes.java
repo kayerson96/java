@@ -36,6 +36,14 @@ public class Mensajes {
         return fecha_mensaje;
     }
 
+    public int getId_mensaje() {
+        return id_mensaje;
+    }
+
+    public void setId_mensaje(int id_mensaje) {
+        this.id_mensaje = id_mensaje;
+    }
+
     public void setFecha_mensaje(String fecha_mensaje) {
         this.fecha_mensaje = fecha_mensaje;
     }

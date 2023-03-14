@@ -82,10 +82,24 @@ public class MensajesDAO {
             PreparedStatement ps = null;
 
 
+            try {
+                String query = "UPDATE mensajes SET mensaje = ? WHERE id_mensaje = ?";
+                ps = conexion.prepareStatement(query);
+                ps.setString(1, mensaje.getMensaje());
+                ps.setInt(2, mensaje.getId_mensaje());
+                ps.executeUpdate();
+                System.out.println("el mensaje fue actualizado");
+
+            }catch (SQLException ex){
+                System.out.println(ex);
+                System.out.println("no se pudo actualizar el mensaje el mensaje");
+            }
+
+
 
         }catch (SQLException e){
             System.out.println(e);
-            System.out.println("no se pudo borrar el mensaje");
+            System.out.println("no se pudo actualizar el mensaje");
         }
     }
 }
